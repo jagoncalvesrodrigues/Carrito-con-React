@@ -11,5 +11,20 @@ const StyledBoxCart = styled.div`
     grid-column: 3/4;
     }
 `;
+const StyledCartTitle = styled.h2`
+    color: #C73B0F;
+    font-size: 24px;
+    font-weight: 600;
+    list-style: auto;
+    margin-bottom: 24px;
+`;
 
-export {StyledBoxCart};
+const StyledImageEmpty = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color:#87635A;
+`;
+
+export {StyledImageEmpty,StyledBoxCart, StyledCartTitle};

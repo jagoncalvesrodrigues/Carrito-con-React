@@ -49,7 +49,7 @@ const filterArray = (elements, filter) => {
 	} else if (filter === 'price') {
 		return [...elements].sort((a, b) => a.price - b.price);
 	}
-	return elements; // Default
+	return elements;
 };
 
 export default App;
