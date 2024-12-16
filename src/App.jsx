@@ -11,8 +11,9 @@ import { GlobalStyles } from './styles/GlobalStyles';
 
 const App = () => {
 	const [active, setActive] = useState(false);
-	const [quantity, setQuantity] = useState(0);
 	const [filter, setFilter] = useState('default');
+	const [cart, setCart] = useState([]);
+	console.log(cart);
 
 	const filteredDesserts = filterArray(ELEMENTS, filter);
 
@@ -28,19 +29,26 @@ const App = () => {
 				<Products>
 					{filteredDesserts.map(dessert => (
 						<Element
+							dessertQuantity={dessert.quantity}
+							dessert={dessert}
+							cart={cart}
+							setCart={setCart}
 							active={active}
 							setActive={setActive}
-							quantity={quantity}
-							setQuantity={setQuantity}
 							key={dessert.id}
 							{...dessert}
+							showButton={showButton(dessert.id, cart)}
 						/>
 					))}
 				</Products>
-				<Cart />
+				<Cart cart={cart} />
 			</MainBox>
 		</Container>
 	);
+};
+
+const showButton = (id, cart) => {
+	return cart.some(item => item.id === id);
 };
 
 const filterArray = (elements, filter) => {

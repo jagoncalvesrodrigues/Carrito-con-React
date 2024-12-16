@@ -18,11 +18,15 @@ const Element = ({
 	imgTablet,
 	price,
 	title,
-	active,
-	setActive,
-	quantity,
-	setQuantity
+	cart,
+	setCart,
+	dessert,
+	showButton,
+	dessertQuantity
 }) => {
+	// const cartItem = cart.find(item => item.id === id);
+	// const quantity = cartItem ? cartItem.quantity : 0;
+
 	return (
 		<StyledElementsBox>
 			<StyledImageButton>
@@ -34,9 +38,9 @@ const Element = ({
 						<img src={imgMobile} alt='' />
 					</picture>
 				</StyledImageProduct>
-				{!active ? (
+				{!showButton ? (
 					<StyledBoxButtonAddCart
-						onClick={() => handleAddToCart(setActive, setQuantity)}
+						onClick={() => addToCart(setCart, dessert, cart)}
 					>
 						<img src='assets/images/icon-add-to-cart.svg' alt='' />
 						Add to Cart
@@ -45,12 +49,12 @@ const Element = ({
 					// MOSTRAMOS EL OTRO BOTON SI EL ESTADO ESTA TRUE
 					<StyledBoxButtonEditCart>
 						<StyledDecreIncre
-							onClick={() => decrementItem(setQuantity, quantity, setActive)}
+							onClick={() => decrementItem(setCart, dessert, cart)}
 							src='assets/images/icon-decrement-quantity.svg'
 						/>
-						<p>{quantity}</p>
+						<p>{dessertQuantity}</p>
 						<StyledDecreIncre
-							onClick={() => incrementItem(setQuantity, quantity)}
+							onClick={() => incrementItem(setCart, dessert, cart)}
 							src='assets/images/icon-increment-quantity.svg'
 						/>
 					</StyledBoxButtonEditCart>
@@ -66,15 +70,30 @@ const Element = ({
 };
 
 // Funciones para manejar los clics
-const handleAddToCart = (setActive, setQuantity) => {
-	setActive(true);
-	setQuantity(1); // Establecer cantidad inicial al agregar al carrito
+const addToCart = (setCart, dessert, cart) => {
+	setCart([...cart, { ...dessert, quantity: 1 }]);
 };
 
-const incrementItem = (setQuantity, quantity) => {
-	setQuantity(quantity + 1);
+const incrementItem = (setCart, dessert, cart) => {
+	setCart(
+		cart.map(item =>
+			item.id === dessert.id ? { ...item, quantity: item.quantity + 1 } : item
+		)
+	);
+	// setQuantity(quantity + 1);
 };
-const decrementItem = (setQuantity, quantity, setActive) => {
-	quantity > 1 ? setQuantity(quantity - 1) : setActive(false);
+const decrementItem = (setCart, dessert, cart) => {
+	setCart(
+		cart
+			.map(item => {
+				if (item.id === dessert.id && item.quantity >= 1) {
+					return { ...item, quantity: item.quantity - 1 };
+				}
+				return item;
+			})
+			.filter(item => item.quantity > 0)
+	);
+	// quantity > 1 ? setQuantity(quantity - 1) : setActive(false);
 };
+
 export default Element;
