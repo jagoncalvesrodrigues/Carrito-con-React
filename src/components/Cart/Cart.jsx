@@ -5,7 +5,7 @@ import {
 	StyledImageEmpty
 } from './cart.styles';
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, setCart }) => {
 	return (
 		<StyledBoxCart>
 			<StyledCartTitle>
@@ -23,17 +23,22 @@ const Cart = ({ cart }) => {
 			) : (
 				cart.map(element => (
 					<CartElement
+						removeElement={() => removeElementCart(element.id, cart, setCart)}
 						key={element.id}
 						name={element.name}
 						quantity={element.quantity}
 						price={element.price}
 						total={element.price * element.quantity}
-						onRemove={() => console.log(`Remove item with id ${element.id}`)}
 					/>
 				))
 			)}
 		</StyledBoxCart>
 	);
+};
+
+const removeElementCart = (id, cart, setCart) => {
+	const updatedCart = cart.filter(item => item.id !== id);
+	setCart(updatedCart);
 };
 
 export default Cart;

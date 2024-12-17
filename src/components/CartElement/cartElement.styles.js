@@ -10,7 +10,6 @@ const StyledBoxElementCart = styled.div`
     border-radius: 12px;
 `;
 const StyledItem = styled.div`
-    width: 125px;
     font-size: 14px;
     line-height: auto;
     font-weight: 700;
@@ -18,18 +17,20 @@ const StyledItem = styled.div`
     flex-direction: column;
 `;
 const StyledName = styled.p`
-
+    margin: 0;
 `;
 const StyledQuantityProduct = styled.div`
     display: flex;
-    justify-content: space-between;
-`;
+    height: 19px;
+    `;
 const StyledQuantity = styled.p`
+    margin-right: 8px;
     color:#C73B0F;
 `;
 const StyledPrice = styled.p`
     color: #87635A;
     font-weight: 400;
+    margin-right: 8px;
 `;
 const StyledTotal = styled.p`
     color: #87635A;

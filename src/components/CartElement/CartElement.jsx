@@ -10,7 +10,7 @@ import {
 	StyledTotal
 } from './cartElement.styles';
 
-const CartElement = ({ name, quantity, price, total }) => {
+const CartElement = ({ name, quantity, price, total, removeElement }) => {
 	return (
 		<>
 			<StyledBoxElementCart>
@@ -22,7 +22,11 @@ const CartElement = ({ name, quantity, price, total }) => {
 						<StyledTotal>${total}</StyledTotal>
 					</StyledQuantityProduct>
 				</StyledItem>
-				<StyledRemoveItem src='assets/images/icon-remove-item.svg' alt='' />
+				<StyledRemoveItem
+					onClick={removeElement}
+					src='assets/images/icon-remove-item.svg'
+					alt=''
+				/>
 			</StyledBoxElementCart>
 			<StyledLine />
 		</>

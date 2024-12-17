@@ -13,11 +13,10 @@ const App = () => {
 	const [active, setActive] = useState(false);
 	const [filter, setFilter] = useState('default');
 	const [cart, setCart] = useState([]);
-	console.log(cart);
 
 	const filteredDesserts = filterArray(ELEMENTS, filter);
 
-	console.log(active);
+	console.log(cart);
 	return (
 		<Container>
 			<GlobalStyles />
@@ -41,7 +40,7 @@ const App = () => {
 						/>
 					))}
 				</Products>
-				<Cart cart={cart} />
+				<Cart setCart={setCart} cart={cart} />
 			</MainBox>
 		</Container>
 	);
