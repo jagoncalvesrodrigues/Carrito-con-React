@@ -26,24 +26,17 @@ const App = () => {
 			</Header>
 			<MainBox>
 				<Products>
-					{filteredDesserts.map(dessert => {
-						const productInCart = cart.find(
-							cartProduct => cartProduct.id === productInCart.id
-						);
-						return (
-							<Element
-								dessertQuantity={productInCart.quantity}
-								dessert={dessert}
-								cart={cart}
-								setCart={setCart}
-								active={active}
-								setActive={setActive}
-								key={dessert.id}
-								{...dessert}
-								showButton={showButton(dessert.id, cart)}
-							/>
-						);
-					})}
+					{filteredDesserts.map(dessert => (
+						<Element
+							dessertQuantity={dessert.quantity}
+							dessert={dessert}
+							cart={cart}
+							setCart={setCart}
+							key={dessert.id}
+							{...dessert}
+							showButton={showButton(dessert.id, cart)}
+						/>
+					))}
 				</Products>
 				<Cart setCart={setCart} cart={cart} />
 			</MainBox>

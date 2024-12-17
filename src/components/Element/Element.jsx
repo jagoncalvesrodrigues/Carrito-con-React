@@ -24,9 +24,6 @@ const Element = ({
 	showButton,
 	dessertQuantity
 }) => {
-	// const cartItem = cart.find(item => item.id === id);
-	// const quantity = cartItem ? cartItem.quantity : 0;
-
 	return (
 		<StyledElementsBox>
 			<StyledImageButton>
