@@ -12,6 +12,7 @@ import {
 } from './element.styles';
 
 const Element = ({
+	id,
 	name,
 	imgDesktop,
 	imgMobile,
@@ -21,9 +22,10 @@ const Element = ({
 	cart,
 	setCart,
 	dessert,
-	showButton,
 	dessertQuantity
 }) => {
+	const productInCart = cart.find(cartProduct => cartProduct.id === id);
+
 	return (
 		<StyledElementsBox>
 			<StyledImageButton>
@@ -35,21 +37,22 @@ const Element = ({
 						<img src={imgMobile} alt='' />
 					</picture>
 				</StyledImageProduct>
-				{!showButton ? (
+				{!productInCart && (
 					<StyledBoxButtonAddCart
 						onClick={() => addToCart(setCart, dessert, cart)}
 					>
 						<img src='assets/images/icon-add-to-cart.svg' alt='' />
 						Add to Cart
 					</StyledBoxButtonAddCart>
-				) : (
+				)}
+				{productInCart && (
 					// MOSTRAMOS EL OTRO BOTON SI EL ESTADO ESTA TRUE
 					<StyledBoxButtonEditCart>
 						<StyledDecreIncre
 							onClick={() => decrementItem(setCart, dessert, cart)}
 							src='assets/images/icon-decrement-quantity.svg'
 						/>
-						<p>{dessertQuantity}</p>
+						<p>{productInCart.quantity}</p>
 						<StyledDecreIncre
 							onClick={() => incrementItem(setCart, dessert, cart)}
 							src='assets/images/icon-increment-quantity.svg'

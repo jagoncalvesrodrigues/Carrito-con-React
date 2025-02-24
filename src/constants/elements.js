@@ -9,7 +9,7 @@ export const ELEMENTS = [
         imgMobile:'assets/images/image-waffle-mobile.jpg',
         imgTablet:'assets/images/image-waffle-tablet.jpg',
         imgThumbnail:'assets/images/image-waffle-thumbnail.jpg',
-        price:'6.50',
+        price:6.50,
         sugarless: true
     },
     {
@@ -20,7 +20,7 @@ export const ELEMENTS = [
         imgMobile:'assets/images/image-creme-brulee-mobile.jpg',
         imgTablet:'assets/images/image-creme-brulee-tablet.jpg',
         imgThumbnail:'assets/images/image-creme-brulee-thumbnail.jpg',
-        price:'7.00',
+        price:7.00,
         sugarless: true
     },
     {
@@ -31,7 +31,7 @@ export const ELEMENTS = [
         imgMobile:'assets/images/image-macaron-mobile.jpg',
         imgTablet:'assets/images/image-macaron-tablet.jpg',
         imgThumbnail:'assets/images/image-macaron-thumbnail.jpg',
-        price:'8.00',
+        price:8.00,
         sugarless: false
     },
     {
@@ -42,7 +42,7 @@ export const ELEMENTS = [
         imgMobile:'assets/images/image-tiramisu-mobile.jpg',
         imgTablet:'assets/images/image-tiramisu-tablet.jpg',
         imgThumbnail:'assets/images/image-tiramisu-thumbnail.jpg',
-        price:'5.50',
+        price:5.50,
         sugarless: false
     },
     {
@@ -53,7 +53,7 @@ export const ELEMENTS = [
         imgMobile:'assets/images/image-baklava-mobile.jpg',
         imgTablet:'assets/images/image-baklava-tablet.jpg',
         imgThumbnail:'assets/images/image-baklava-thumbnail.jpg',
-        price:'4.00',
+        price:4.00,
         sugarless: true
     },
     {
@@ -64,7 +64,7 @@ export const ELEMENTS = [
         imgMobile:'assets/images/image-meringue-mobile.jpg',
         imgTablet:'assets/images/image-meringue-tablet.jpg',
         imgThumbnail:'assets/images/image-meringue-thumbnail.jpg',
-        price:'5.00',
+        price:5.00,
         sugarless: true
     },
     {
@@ -75,7 +75,7 @@ export const ELEMENTS = [
         imgMobile:'assets/images/image-cake-mobile.jpg',
         imgTablet:'assets/images/image-cake-tablet.jpg',
         imgThumbnail:'assets/images/image-cake-thumbnail.jpg',
-        price:'4.50',
+        price:4.50,
         sugarless: false
     },
     {
@@ -86,7 +86,7 @@ export const ELEMENTS = [
         imgMobile:'assets/images/image-brownie-mobile.jpg',
         imgTablet:'assets/images/image-brownie-tablet.jpg',
         imgThumbnail:'assets/images/image-brownie-thumbnail.jpg',
-        price:'5.50',
+        price:5.50,
         sugarless: false
     },
     {
@@ -97,7 +97,7 @@ export const ELEMENTS = [
         imgMobile:'assets/images/image-panna-cotta-mobile.jpg',
         imgTablet:'assets/images/image-panna-cotta-tablet.jpg',
         imgThumbnail:'assets/images/image-panna-cotta-thumbnail.jpg', 
-        price:'6.50',
+        price:6.50,
         sugarless: true
     }
 ];

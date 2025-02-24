@@ -5,19 +5,19 @@ const Filters = ({ setFilter, filter }) => {
 		<StyledBox>
 			<StyledButton
 				onClick={() => setFilter('default')}
-				active={filter === 'default'}
+				$active={filter === 'default'}
 			>
 				Default
 			</StyledButton>
 			<StyledButton
 				onClick={() => setFilter('name')}
-				active={filter === 'name'}
+				$active={filter === 'name'}
 			>
 				Name
 			</StyledButton>
 			<StyledButton
 				onClick={() => setFilter('price')}
-				active={filter === 'price'}
+				$active={filter === 'price'}
 			>
 				Price
 			</StyledButton>

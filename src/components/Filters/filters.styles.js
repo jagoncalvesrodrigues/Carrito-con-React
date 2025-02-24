@@ -24,8 +24,8 @@ const StyledButton = styled.button`
     height: 100%;
     border: 1px solid #AD8A85;
     background-color: white;
-    background-color: ${({ active }) => (active ? '#C73B0F' : '#FFFFFF')};
-	color: ${({ active }) => (active ? '#FFFFFF' : '#260F08')};
+    background-color: ${({ $active }) => ($active ? '#C73B0F' : '#FFFFFF')};
+	color: ${({ $active }) => ($active ? '#FFFFFF' : '#260F08')};
     border-radius: 999px;
     display: flex;
     align-items: center;

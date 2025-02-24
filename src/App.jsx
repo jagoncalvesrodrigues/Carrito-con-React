@@ -8,10 +8,12 @@ import MainBox from './components/MainBox/MainBox';
 import Products from './components/Products/Products';
 import { ELEMENTS } from './constants/elements';
 import { GlobalStyles } from './styles/GlobalStyles';
+import Modal from './components/Modal/Modal';
 
 const App = () => {
 	const [active, setActive] = useState(false);
 	const [filter, setFilter] = useState('default');
+	const [content, setContent] = useState();
 	const [cart, setCart] = useState([]);
 
 	const filteredDesserts = filterArray(ELEMENTS, filter);
@@ -28,26 +30,20 @@ const App = () => {
 				<Products>
 					{filteredDesserts.map(dessert => (
 						<Element
-							dessertQuantity={dessert.quantity}
 							dessert={dessert}
 							cart={cart}
 							setCart={setCart}
 							key={dessert.id}
 							{...dessert}
-							showButton={showButton(dessert.id, cart)}
 						/>
 					))}
 				</Products>
 				<Cart setCart={setCart} cart={cart} />
+				<Modal cart={cart}>{content}</Modal>
 			</MainBox>
 		</Container>
 	);
 };
-
-const showButton = (id, cart) => {
-	return cart.some(item => item.id === id);
-};
-
 const filterArray = (elements, filter) => {
 	if (filter === 'name') {
 		return [...elements].sort((a, b) => a.name.localeCompare(b.name));
