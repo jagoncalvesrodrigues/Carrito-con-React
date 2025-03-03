@@ -22,7 +22,7 @@ const Element = ({
 	cart,
 	setCart,
 	dessert,
-	dessertQuantity
+	
 }) => {
 	const productInCart = cart.find(cartProduct => cartProduct.id === id);
 
